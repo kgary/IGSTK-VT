@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<scxml version="1.0"
+initialstate="IdleState"
+>
+  <state id="IdleState">
+    <transition event="imageDirectoryNameValidInput">
+      <target next="ImageDirectoryNameReadState"/>
+    </transition>
+  </state>
+  <state id="ImageDirectoryNameReadState">
+    <transition event="imageSeriesFileNamesGeneratingSuccessInput">
+      <target next="ImageSeriesFileNamesGeneratedState"/>
+    </transition>
+    <transition event="resetReaderInput">
+      <target next="IdleState"/>
+    </transition>
+    <transition event="imageSeriesFileNamesGeneratingErrorInput">
+      <target next="IdleState"/>
+    </transition>
+  </state>
+  <state id="AttemptingToReadImageState">
+    <transition event="imageReadingSuccessInput">
+      <target next="ImageReadState"/>
+    </transition>
+    <transition event="resetReaderInput">
+      <target next="IdleState"/>
+    </transition>
+    <transition event="imageReadingErrorInput">
+      <target next="IdleState"/>
+    </transition>
+  </state>
+  <state id="ImageSeriesFileNamesGeneratedState">
+    <transition event="readImageInput">
+      <target next="AttemptingToReadImageState"/>
+    </transition>
+  </state>
+  <state id="ImageReadState">
+    <transition event="resetReaderInput">
+      <target next="IdleState"/>
+    </transition>
+  </state>
+</scxml>

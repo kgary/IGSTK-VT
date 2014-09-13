@@ -1,0 +1,19 @@
+<?xml version="1.0"?> 
+  <igstk> 
+    <metadata> 
+	<factory type="IgstkvtTransitionCoverage"	Time="Wed Feb 4 22:48:59 2009">
+	      <factoryparam name="includeselftransitions" value="false" /> 
+	</factory> 
+	<component type="igstkMeshObjectRepresentation"/> 
+    </metadata> 
+
+<events> 
+
+	<send event="validMeshObjectInput"/>
+
+	<send event="nullMeshObjectInput"/>
+
+	<send event="validMeshObjectInput"/>
+
+</events> 
+</igstk>

@@ -1,0 +1,35 @@
+<?xml version="1.0"?> 
+<igstk> 
+    <metadata> 
+		LogFile Name: "xmlFiles/replay/logOneViewAndTracking.txt" 
+		Component Name: "SerialCommunicationForWindows" 
+		Component Instance: "02D61688"
+		Time: Wed Feb 4 19:16:02 2009
+    </metadata> 
+
+<events>
+	<send event="UpdateParametersInput"/>
+	<send event="OpenPortInput"/>
+	<send event="SuccessInput"/>
+	<send event="UpdateParametersInput"/>
+	<send event="SuccessInput"/>
+	<send event="PurgeBuffersInput"/>
+	<send event="SuccessInput"/>
+	<send event="UpdateParametersInput"/>
+	<send event="SuccessInput"/>
+	<send event="SleepInput"/>
+	<send event="SuccessInput"/>
+	<send event="SendBreakInput"/>
+	<send event="SuccessInput"/>
+	<send event="SleepInput"/>
+	<send event="SuccessInput"/>
+	<send event="ReadInput"/>
+	<send event="TimeoutInput"/>
+	<send event="PurgeBuffersInput"/>
+	<send event="SuccessInput"/>
+	<send event="WriteInput"/>
+	<send event="SuccessInput"/>
+	<send event="ReadInput"/>
+	<send event="TimeoutInput"/>
+</events> 
+</igstk> 

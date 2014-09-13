@@ -1,0 +1,19 @@
+<?xml version="1.0"?> 
+  <igstk> 
+    <metadata> 
+	<factory type="IgstkvtTransitionCoverage"	Time="Wed Feb 4 22:54:50 2009">
+	      <factoryparam name="includeselftransitions" value="false" /> 
+	</factory> 
+	<component type="igstkUltrasoundProbeObjectRepresentation"/> 
+    </metadata> 
+
+<events> 
+
+	<send event="validUltrasoundProbeObjectInput"/>
+
+	<send event="nullUltrasoundProbeObjectInput"/>
+
+	<send event="validUltrasoundProbeObjectInput"/>
+
+</events> 
+</igstk>

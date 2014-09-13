@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<scxml version="1.0"
+initialstate="IdleState"
+>
+  <state id="IdleState">
+    <transition event="select5DOFTrackerToolInput">
+      <target next="5DOFTrackerToolSelectedState"/>
+    </transition>
+    <transition event="select6DOFTrackerToolInput">
+      <target next="6DOFTrackerToolSelectedState"/>
+    </transition>
+  </state>
+  <state id="5DOFTrackerToolSelectedState">
+    <transition event="validPortNumberInput">
+      <target next="5DOFTrackerToolPortNumberSpecifiedState"/>
+    </transition>
+  </state>
+  <state id="6DOFTrackerToolSelectedState">
+    <transition event="validPortNumberInput">
+      <target next="6DOFTrackerToolPortNumberSpecifiedState"/>
+    </transition>
+  </state>
+  <state id="5DOFTrackerToolPortNumberSpecifiedState">
+    <transition event="validChannelNumberInput">
+      <target next="5DOFTrackerToolChannelNumberSpecifiedState"/>
+    </transition>
+  </state>
+  <state id="6DOFTrackerToolPortNumberSpecifiedState">
+    <transition event="validSROMFileNameInput">
+      <target next="6DOFTrackerToolSROMFileNameSpecifiedState"/>
+    </transition>
+  </state>
+  <state id="5DOFTrackerToolChannelNumberSpecifiedState">
+    <transition event="validSROMFileNameInput">
+      <target next="5DOFTrackerToolSROMFileNameSpecifiedState"/>
+    </transition>
+  </state>
+  <state id="5DOFTrackerToolSROMFileNameSpecifiedState">
+    <transition event="validPartNumberInput">
+      <target next="5DOFTrackerToolPartNumberSpecifiedState"/>
+    </transition>
+  </state>
+  <state id="6DOFTrackerToolSROMFileNameSpecifiedState">
+    <transition event="validPartNumberInput">
+      <target next="6DOFTrackerToolPartNumberSpecifiedState"/>
+    </transition>
+  </state>
+  <state id="5DOFTrackerToolPartNumberSpecifiedState">
+  </state>
+  <state id="6DOFTrackerToolPartNumberSpecifiedState">
+  </state>
+</scxml>

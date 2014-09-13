@@ -1,0 +1,81 @@
+<?xml version="1.0"?> 
+  <igstk> 
+    <metadata> 
+	<factory type="IgstkvtTransitionCoverage"	Time="Wed Feb 4 22:49:49 2009">
+	      <factoryparam name="includeselftransitions" value="false" /> 
+	</factory> 
+	<component type="igstkMR3DImageToUS3DImageRegistration"/> 
+    </metadata> 
+
+<events> 
+
+	<send event="validMovingMR3DInput"/>
+
+	<send event="resetRegistrationInput"/>
+
+	<send event="validMovingMR3DInput"/>
+
+	<send event="validFixedUS3DInput"/>
+
+	<send event="resetRegistrationInput"/>
+
+	<send event="validMovingMR3DInput"/>
+
+	<send event="validFixedUS3DInput"/>
+
+	<send event="validRegistrationInput"/>
+
+	<send event="validFixedUS3DInput"/>
+
+	<send event="validRegistrationInput"/>
+
+	<send event="validMovingMR3DInput"/>
+
+	<send event="validRegistrationInput"/>
+
+	<send event="resetRegistrationInput"/>
+
+	<send event="validMovingMR3DInput"/>
+
+	<send event="validFixedUS3DInput"/>
+
+	<send event="validRegistrationInput"/>
+
+	<send event="validFixedUS3DInput"/>
+
+	<send event="validRegistrationInput"/>
+
+	<send event="resetRegistrationInput"/>
+
+	<send event="validFixedUS3DInput"/>
+
+	<send event="validMovingMR3DInput"/>
+
+	<send event="validRegistrationInput"/>
+
+	<send event="validFixedUS3DInput"/>
+
+	<send event="validRegistrationInput"/>
+
+	<send event="resetRegistrationInput"/>
+
+	<send event="validFixedUS3DInput"/>
+
+	<send event="resetRegistrationInput"/>
+
+	<send event="validMovingMR3DInput"/>
+
+	<send event="validFixedUS3DInput"/>
+
+	<send event="validRegistrationInput"/>
+
+	<send event="validFixedUS3DInput"/>
+
+	<send event="validRegistrationInput"/>
+
+	<send event="resetRegistrationInput"/>
+
+	<send event="validFixedUS3DInput"/>
+
+</events> 
+</igstk>

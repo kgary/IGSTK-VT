@@ -1,0 +1,19 @@
+<?xml version="1.0"?> 
+  <igstk> 
+    <metadata> 
+	<factory type="EdgeCoverage"	Time="Wed Feb 4 22:43:21 2009">
+	      <factoryparam name="includeselftransitions" value="false" /> 
+	</factory> 
+	<component type="igstkDummyTracker"/> 
+    </metadata> 
+
+<events> 
+
+	<send event="establishCommunicationInput"/>
+
+	<send event="successInput"/>
+
+	<send event="startTrackingInput"/>
+
+</events> 
+</igstk>

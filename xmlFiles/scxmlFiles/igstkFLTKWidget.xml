@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<scxml version="1.0"
+initialstate="IdleState"
+>
+  <state id="IdleState">
+    <transition event="validViewInput">
+      <target next="ViewConnectedState"/>
+    </transition>
+  </state>
+  <state id="ViewConnectedState">
+  </state>
+</scxml>

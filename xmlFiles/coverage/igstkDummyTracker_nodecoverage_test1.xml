@@ -1,0 +1,35 @@
+<?xml version="1.0"?> 
+  <igstk> 
+    <metadata> 
+	<factory type="IgstkvtStatementCoverage"	Time="Wed Feb 4 22:43:37 2009">
+	      <factoryparam name="includeselftransitions" value="false" /> 
+	</factory> 
+	<component type="igstkDummyTracker"/> 
+    </metadata> 
+
+<events> 
+
+	<send event="establishCommunicationInput"/>
+
+	<send event="successInput"/>
+
+	<send event="closeCommunicationInput"/>
+
+	<send event="failureInput"/>
+
+	<send event="attachTrackerToolInput"/>
+
+	<send event="successInput"/>
+
+	<send event="startTrackingInput"/>
+
+	<send event="successInput"/>
+
+	<send event="updateStatusInput"/>
+
+	<send event="successInput"/>
+
+	<send event="stopTrackingInput"/>
+
+</events> 
+</igstk>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs='http://www.w3.org/2001/XMLSchema'>
+  
+   
+  <xs:element name="igstk">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="path_heuristics" maxOccurs="1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="component" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="baseline_path">
+                      <xs:complexType>
+                        <xs:group ref="baselinegroup"/>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="loop" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="transition" minOccurs="1">
+                            <xs:complexType>
+                              <xs:sequence>
+                                  <xs:group ref="loopgroup" minOccurs="1" maxOccurs="1"/>
+                              </xs:sequence>
+                              <xs:attributeGroup ref="loopattributes"/>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        
+                      </xs:complexType>
+                
+                               
+                    </xs:element>
+                    <xs:element name="include_state" minOccurs="0">
+                      <xs:complexType>
+                        <xs:attributeGroup ref="stategroup"/>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="exclude_state" minOccurs="0">
+                      <xs:complexType>
+                        <xs:attributeGroup ref="stategroup"/>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="include_transition" minOccurs="0">
+                      <xs:complexType>
+                        <xs:attributeGroup ref="transitiongroup"/>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="exclude_transition" minOccurs="0">
+                      <xs:complexType>
+                        <xs:attributeGroup ref="transitiongroup"/>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attributeGroup ref="componentattr"/>
+               </xs:complexType>
+                
+              
+              </xs:element>
+              
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:attributeGroup name="componentattr">
+    <xs:attribute name="name" type="xs:string"></xs:attribute>
+    <xs:attribute name="entry" type="xs:string"></xs:attribute>
+    <xs:attribute name="exit" type="xs:string"></xs:attribute>
+  </xs:attributeGroup>
+
+  <xs:group name="baselinegroup">
+    <xs:sequence>
+      <xs:element name="exception_input" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:attribute name="name" type="xs:string"></xs:attribute>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="selection" minOccurs="1" maxOccurs="1">
+        <xs:complexType>
+          <xs:attribute name="criteria" type="xs:string"></xs:attribute>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:group>
+
+  <xs:group name="loopgroup">
+    <xs:sequence>
+      <xs:element name="maxTraversal" minOccurs="1" maxOccurs="1">
+        <xs:complexType>
+          <xs:attribute name="count" type="xs:integer"></xs:attribute>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:group>
+  
+  <xs:attributeGroup name="loopattributes">
+    <xs:attribute name="event" type="xs:string"></xs:attribute>
+    <xs:attribute name="source" type="xs:string"></xs:attribute>
+  </xs:attributeGroup>
+
+  <xs:attributeGroup name="stategroup">
+    <xs:attribute name="name" type="xs:string"></xs:attribute>
+  </xs:attributeGroup>
+
+  <xs:attributeGroup name="transitiongroup">
+    <xs:attribute name="event" type="xs:string"></xs:attribute>
+    <xs:attribute name="source" type="xs:string"></xs:attribute>
+  </xs:attributeGroup>
+</xs:schema>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="us-ascii"?> 
+
+<igstk> 
+
+  <path_heuristics>
+  
+  <!-- By default # of traversals for FailureInput and SuccessInput have been limited to 1. User can change it if need be -->
+  <!-- maxTraversal -loopAllowed="no" implies that transition can be made by the SM only count number of times -->
+    
+    <component name="igstkTracker" entry="IdleState" exit="IdleState">
+
+    <!-- source and target attributes provided more number of traversals applicable only between those two states. FailureInput and successInput elsewhere behaves differently. maxTraversalCount for the timebeing has been set to 20. Need to modify it depending on the baudrate -->
+	        
+    <baseline_path>
+      <exception_input name="failureInput" />
+	    <exception_input name="resetInput" />
+	    <selection criteria="shortest" />
+    </baseline_path>
+      <!--include_transition event= "activateToolsInput"  source= "CommunicationEstablishedState">
+        
+      </include_transition-->
+      <!--include_transition event= "updateStatusInput"  source= "TrackingState">
+
+      </include_transition-->
+      <include_states name="TrackingState"/>
+      
+   </component>
+    
+    <component name="igstkLandmark3DRegistration" entry="IdleState" exit="IdleState">
+      <baseline_path>
+
+        <selection criteria="longest" />
+      </baseline_path>
+    </component>
+
+    <component name="igstkDICOMImageReader" entry="IdleState" exit="IdleState">
+      <baseline_path>
+
+        <selection criteria="longest" />
+      </baseline_path>
+    </component>
+
+
+    <component name="igstkPrincipalAxisCalibration" entry="IdleState" exit="IdleState">
+     <baseline_path>
+       
+       <selection criteria="longest" />
+     </baseline_path>    
+   </component>
+
+    <component name="igstkSpatialObject" entry="InitialState" exit="NonTrackedState">
+      <baseline_path>
+
+        <selection criteria="longest" />
+      </baseline_path>
+    </component>
+    
+
+  </path_heuristics>
+</igstk>

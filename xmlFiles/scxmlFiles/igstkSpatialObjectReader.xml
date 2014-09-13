@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<scxml version="1.0"
+initialstate="IdleState"
+>
+  <state id="IdleState">
+    <transition event="objectFileNameValidInput">
+      <target next="ObjectFileNameReadState"/>
+    </transition>
+  </state>
+  <state id="ObjectFileNameReadState">
+    <transition event="readObjectRequestInput">
+      <target next="ObjectAttemptingReadState"/>
+    </transition>
+    <transition event="objectFileNameIsEmptyInput">
+      <target next="IdleState"/>
+    </transition>
+    <transition event="objectFileNameIsDirectoryInput">
+      <target next="IdleState"/>
+    </transition>
+    <transition event="objectFileNameDoesNotExistInput">
+      <target next="IdleState"/>
+    </transition>
+  </state>
+  <state id="ObjectReadState">
+    <transition event="objectFileNameValidInput">
+      <target next="ObjectFileNameReadState"/>
+    </transition>
+    <transition event="objectFileNameIsEmptyInput">
+      <target next="IdleState"/>
+    </transition>
+    <transition event="objectFileNameIsDirectoryInput">
+      <target next="IdleState"/>
+    </transition>
+    <transition event="objectFileNameDoesNotExistInput">
+      <target next="IdleState"/>
+    </transition>
+  </state>
+  <state id="ObjectAttemptingReadState">
+    <transition event="objectReadingErrorInput">
+      <target next="IdleState"/>
+    </transition>
+    <transition event="objectReadingSuccessInput">
+      <target next="ObjectReadState"/>
+    </transition>
+  </state>
+</scxml>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<scxml version="1.0"
+initialstate="NullMeshObjectState"
+>
+  <state id="NullMeshObjectState">
+    <transition event="validMeshObjectInput">
+      <target next="ValidMeshObjectState"/>
+    </transition>
+  </state>
+  <state id="ValidMeshObjectState">
+    <transition event="nullMeshObjectInput">
+      <target next="NullMeshObjectState"/>
+    </transition>
+  </state>
+</scxml>

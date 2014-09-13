@@ -1,0 +1,6 @@
+PROJECT(Coverage CXX)
+
+MAKE_DIRECTORY(bin)
+
+ADD_SUBDIRECTORY(src)
+

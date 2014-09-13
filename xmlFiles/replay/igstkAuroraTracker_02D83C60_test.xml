@@ -1,0 +1,13 @@
+<?xml version="1.0"?> 
+<igstk> 
+    <metadata> 
+		LogFile Name: "xmlFiles/replay/logFourViewsAndTracking.txt" 
+		Component Name: "AuroraTracker" 
+		Component Instance: "02D83C60"
+		Time: Wed Feb 4 19:17:49 2009
+    </metadata> 
+
+<events>
+	<send event="EstablishCommunicationInput"/>
+</events> 
+</igstk> 

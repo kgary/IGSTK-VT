@@ -1,0 +1,18 @@
+<?xml version="1.0"?> 
+<igstk> 
+    <metadata> 
+		LogFile Name: "xmlFiles/replay/logOneViewAndTracking.txt" 
+		Component Name: "AuroraTracker" 
+		Component Instance: "02D5EC50"
+		Time: Wed Feb 4 19:16:02 2009
+    </metadata> 
+
+<events>
+	<send event="EstablishCommunicationInput"/>
+	<send event="FailureInput"/>
+	<send event="StartTrackingInput"/>
+	<send event="ResetInput"/>
+	<send event="StopTrackingInput"/>
+	<send event="CloseCommunicationInput"/>
+</events> 
+</igstk> 

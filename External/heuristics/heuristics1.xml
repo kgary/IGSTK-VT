@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<igstk xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+<path_heuristics>
+
+<!-- By default # of traversals for FailureInput and SuccessInput have been limited to 1. User can change it if need be -->
+<!-- maxTraversal -loopAllowed="no" implies that transition can be made by the SM only count number of times -->
+  <component name="igstkTracker" entry="IdleState" exit="IdleState">
+
+    <!-- source and target attributes provided more number of traversals applicable only between those two states. FailureInput and successInput elsewhere behaves differently. maxTraversalCount for the timebeing has been set to 20. Need to modify it depending on the baudrate -->
+    
+    <baseline_path>
+      <exception_input name="failureInput" />
+      <exception_input name="resetInput" />
+      <selection criteria="longest" />
+    </baseline_path>
+    <loop>
+      <transition event= "updateStatusInput"  source= "TrackingState">
+        <maxTraversal count="20"/>
+      </transition>
+    </loop>
+
+  </component>
+  
+
+  <component name="igstkLandmark3DRegistration" entry="IdleState" exit="IdleState">
+    <baseline_path>
+      <selection criteria="longest" />
+    </baseline_path>
+    <loop>
+      <transition event= "imageLandmarkInput"  source= "TrackerLandmark3AddedState">
+        <maxTraversal count="2"/>
+      </transition>
+    </loop>
+  </component>
+
+  <component name="igstkDICOMImageReader" entry="IdleState" exit="IdleState">
+    <baseline_path>
+      <selection criteria="longest" />
+    </baseline_path>
+  </component>
+  <component name="igstkDICOMImageReaderSurrogate" entry="IdleState" exit="IdleState">
+    <baseline_path>
+      <selection criteria="longest" />
+    </baseline_path>
+  </component>
+
+    <component name="igstkPrincipalAxisCalibration" entry="IdleState" exit="IdleState">
+      <baseline_path>
+        <selection criteria="longest" />
+      </baseline_path>
+      
+    </component>
+  
+    <component name="igstkPulseGenerator" entry="InitialState" exit="InitialState">
+      <baseline_path>
+        <selection criteria="longest" />
+      </baseline_path>
+      
+    </component>
+
+    <component name="igstkSpatialObjectSurrogate" entry="InitialState" exit="NonTrackedState">
+      <baseline_path>
+         <selection criteria="longest" />
+      </baseline_path>
+    </component>
+  <component name="igstkImageSpatialObjectSurrogate" entry="InitialState" exit="InitialState">
+    <baseline_path>
+      <selection criteria="longest" />
+    </baseline_path>
+  </component>
+  <component name="igstkPivotCalibration" entry="IdleState" exit="CalibrationZCalculatedState">
+    <baseline_path>
+      <selection criteria="longest" />
+    </baseline_path>
+  </component>
+  <component name="igstkCylinderObjectRepresentation" entry="NullCylinderObjectState" exit="NullCylinderObjectState">
+    <baseline_path>
+      <selection criteria="longest" />
+    </baseline_path>
+  </component>
+  <component name="igstkEllipsoidObjectRepresentation" entry="NullCylinderObjectState" exit="NullEllipsoidObjectState">
+    <baseline_path>
+      <selection criteria="longest" />
+    </baseline_path>
+  </component>
+  <component name="igstkImageSpatialObjectRepresentation" entry="NullImageSpatialObjectState" exit="ValidSliceNumberState">
+    <baseline_path>
+      <selection criteria="longest" />
+    </baseline_path>
+  </component>
+  <component name="igstkLandmark3DRegistrationErrorEstimator" entry="IdleState" exit="TargetRegistrationErrorEstimatedState">
+    <baseline_path>
+      <selection criteria="longest" />
+    </baseline_path>
+  </component>
+  <component name="igstkObjectRepresentationSurrogate" entry="NullSpatialObjectState" exit="NullSpatialObjectState">
+    <baseline_path>
+      <selection criteria="longest" />
+    </baseline_path>
+    <exclude_state name="InvalidTimeStampState"/>
+  </component>
+  <component name="igstkSpatialObjectReader" entry="IdleState" exit="IdleState">
+    <baseline_path>
+      <selection criteria="longest" />
+    </baseline_path>
+  </component>
+  <component name="three_transiton_decision" entry="State1" exit="State1">
+    <baseline_path>
+      <selection criteria="longest" />
+    </baseline_path>
+  </component>
+  <component name="igstkTestcase1" entry="IdleState" exit="IdleState">
+    <baseline_path>
+      <selection criteria="longest" />
+    </baseline_path>
+  </component>
+  <component name="igstkTestcase2" entry="IdleState" exit="IdleState">
+    <baseline_path>
+      <selection criteria="longest" />
+    </baseline_path>
+  </component>
+  
+
+</path_heuristics>
+</igstk>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<vtconfig>
+        <drool-files>
+		<file>rules/igstk_6.drl</file>
+	</drool-files>
+	<state-machines>
+		<state-machine id="1" name="Dummy Tracker">
+			<file>
+				igstkDummyTracker.xml
+			</file>
+			<sendEventFile>
+				igstkDummyTracker_edgecoverage_test1.xml
+			</sendEventFile>
+		</state-machine>
+		
+		<state-machine id="2" name="Dummy Tracker">
+			<file>
+				igstkDummyTracker.xml
+			</file>
+			<sendEventFile>
+				igstkDummyTracker_nodecoverage_test1.xml
+			</sendEventFile>
+		</state-machine>
+		
+		
+	</state-machines>
+</vtconfig>

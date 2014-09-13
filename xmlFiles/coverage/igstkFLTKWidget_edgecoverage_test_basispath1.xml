@@ -1,0 +1,15 @@
+<?xml version="1.0"?> 
+  <igstk> 
+    <metadata> 
+	<factory type="IgstkvtTransitionCoverage"	Time="Wed Feb 4 22:46:24 2009">
+	      <factoryparam name="includeselftransitions" value="false" /> 
+	</factory> 
+	<component type="igstkFLTKWidget"/> 
+    </metadata> 
+
+<events> 
+
+	<send event="validViewInput"/>
+
+</events> 
+</igstk>

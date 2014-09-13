@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<scxml version="1.0"
+initialstate="NullBoxObjectState"
+>
+  <state id="NullBoxObjectState">
+    <transition event="validBoxObjectInput">
+      <target next="ValidBoxObjectState"/>
+    </transition>
+  </state>
+  <state id="ValidBoxObjectState">
+    <transition event="nullBoxObjectInput">
+      <target next="NullBoxObjectState"/>
+    </transition>
+  </state>
+</scxml>

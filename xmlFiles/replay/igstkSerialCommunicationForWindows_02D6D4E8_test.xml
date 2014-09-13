@@ -1,0 +1,34 @@
+<?xml version="1.0"?> 
+<igstk> 
+    <metadata> 
+		LogFile Name: "xmlFiles/replay/logFourViewsAndTracking.txt" 
+		Component Name: "SerialCommunicationForWindows" 
+		Component Instance: "02D6D4E8"
+		Time: Wed Feb 4 19:17:49 2009
+    </metadata> 
+
+<events>
+	<send event="UpdateParametersInput"/>
+	<send event="OpenPortInput"/>
+	<send event="SuccessInput"/>
+	<send event="UpdateParametersInput"/>
+	<send event="SuccessInput"/>
+	<send event="PurgeBuffersInput"/>
+	<send event="SuccessInput"/>
+	<send event="UpdateParametersInput"/>
+	<send event="SuccessInput"/>
+	<send event="SleepInput"/>
+	<send event="SuccessInput"/>
+	<send event="SendBreakInput"/>
+	<send event="SuccessInput"/>
+	<send event="SleepInput"/>
+	<send event="SuccessInput"/>
+	<send event="ReadInput"/>
+	<send event="TimeoutInput"/>
+	<send event="PurgeBuffersInput"/>
+	<send event="SuccessInput"/>
+	<send event="WriteInput"/>
+	<send event="SuccessInput"/>
+	<send event="ReadInput"/>
+</events> 
+</igstk> 

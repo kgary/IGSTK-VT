@@ -1,0 +1,73 @@
+<?xml version="1.0"?> 
+  <igstk> 
+    <metadata> 
+	<factory type="IgstkvtTransitionCoverage"	Time="Wed Feb 4 22:52:03 2009">
+	      <factoryparam name="includeselftransitions" value="false" /> 
+	</factory> 
+	<component type="igstkPulseGenerator"/> 
+    </metadata> 
+
+<events> 
+
+	<send event="validFrequencyInput"/>
+
+	<send event="invalidHighFrequencyInput"/>
+
+	<send event="validFrequencyInput"/>
+
+	<send event="invalidLowFrequencyInput"/>
+
+	<send event="validFrequencyInput"/>
+
+	<send event="startInput"/>
+
+	<send event="stopInput"/>
+
+	<send event="startInput"/>
+
+	<send event="eventReturnInput"/>
+
+	<send event="startInput"/>
+
+	<send event="invalidHighFrequencyInput"/>
+
+	<send event="validFrequencyInput"/>
+
+	<send event="startInput"/>
+
+	<send event="invalidLowFrequencyInput"/>
+
+	<send event="validFrequencyInput"/>
+
+	<send event="startInput"/>
+
+	<send event="pulseInput"/>
+
+	<send event="eventReturnInput"/>
+
+	<send event="pulseInput"/>
+
+	<send event="stopInput"/>
+
+	<send event="startInput"/>
+
+	<send event="pulseInput"/>
+
+	<send event="invalidHighFrequencyInput"/>
+
+	<send event="validFrequencyInput"/>
+
+	<send event="startInput"/>
+
+	<send event="pulseInput"/>
+
+	<send event="invalidLowFrequencyInput"/>
+
+	<send event="validFrequencyInput"/>
+
+	<send event="startInput"/>
+
+	<send event="pulseInput"/>
+
+</events> 
+</igstk>

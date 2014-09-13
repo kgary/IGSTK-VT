@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<scxml version="1.0"
+initialstate="NullImageSpatialObjectState"
+>
+  <state id="NullImageSpatialObjectState">
+    <transition event="validImageSpatialObjectInput">
+      <target next="ValidImageSpatialObjectState"/>
+    </transition>
+  </state>
+  <state id="ValidImageSpatialObjectState">
+    <transition event="nullImageSpatialObjectInput">
+      <target next="NullImageSpatialObjectState"/>
+    </transition>
+    <transition event="emptyImageSpatialObjectInput">
+      <target next="NullImageSpatialObjectState"/>
+    </transition>
+    <transition event="validOrientationInput">
+      <target next="ValidImageOrientationState"/>
+    </transition>
+  </state>
+  <state id="ValidImageOrientationState">
+    <transition event="validImageSpatialObjectInput">
+      <target next="ValidImageSpatialObjectState"/>
+    </transition>
+    <transition event="nullImageSpatialObjectInput">
+      <target next="NullImageSpatialObjectState"/>
+    </transition>
+    <transition event="emptyImageSpatialObjectInput">
+      <target next="NullImageSpatialObjectState"/>
+    </transition>
+    <transition event="setSliceNumberInput">
+      <target next="AttemptingToSetSliceNumberState"/>
+    </transition>
+    <transition event="validSliceNumberInput">
+      <target next="ValidSliceNumberState"/>
+    </transition>
+  </state>
+  <state id="ValidSliceNumberState">
+    <transition event="validImageSpatialObjectInput">
+      <target next="ValidImageSpatialObjectState"/>
+    </transition>
+    <transition event="nullImageSpatialObjectInput">
+      <target next="NullImageSpatialObjectState"/>
+    </transition>
+    <transition event="emptyImageSpatialObjectInput">
+      <target next="NullImageSpatialObjectState"/>
+    </transition>
+    <transition event="setSliceNumberInput">
+      <target next="AttemptingToSetSliceNumberState"/>
+    </transition>
+    <transition event="invalidSliceNumberInput">
+      <target next="ValidImageOrientationState"/>
+    </transition>
+    <transition event="validOrientationInput">
+      <target next="ValidImageOrientationState"/>
+    </transition>
+  </state>
+  <state id="AttemptingToSetSliceNumberState">
+    <transition event="validImageSpatialObjectInput">
+      <target next="ValidImageSpatialObjectState"/>
+    </transition>
+    <transition event="nullImageSpatialObjectInput">
+      <target next="NullImageSpatialObjectState"/>
+    </transition>
+    <transition event="emptyImageSpatialObjectInput">
+      <target next="NullImageSpatialObjectState"/>
+    </transition>
+    <transition event="validSliceNumberInput">
+      <target next="ValidSliceNumberState"/>
+    </transition>
+    <transition event="invalidSliceNumberInput">
+      <target next="ValidImageOrientationState"/>
+    </transition>
+    <transition event="validOrientationInput">
+      <target next="ValidImageOrientationState"/>
+    </transition>
+  </state>
+</scxml>

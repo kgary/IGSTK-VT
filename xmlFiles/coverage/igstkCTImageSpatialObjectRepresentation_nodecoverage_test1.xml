@@ -1,0 +1,13 @@
+<?xml version="1.0"?> 
+  <igstk> 
+    <metadata> 
+	<factory type="IgstkvtStatementCoverage"	Time="Wed Feb 4 22:41:34 2009">
+	      <factoryparam name="includeselftransitions" value="false" /> 
+	</factory> 
+	<component type="igstkCTImageSpatialObjectRepresentation"/> 
+    </metadata> 
+
+<events> 
+
+</events> 
+</igstk>

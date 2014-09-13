@@ -1,0 +1,245 @@
+<project name="IGSTKValidation" default="compile" basedir=".">
+  <property name="debug" value="true" />
+  <property name="src.dir" value="src" />
+  <property name="testing.dir" value="junit/src" />
+  <property name="lib.dir" value="lib" />
+  <property name="classes.dir" value="classes" />
+  <property name="testing.classes.dir" value="junit/classes" />
+  <property name="properties.dir" value="properties" />
+  <property name="sim.build.dir" value="sim-build" />
+  <property name="gen.build.dir" value="gen-build" />
+  <property name="smviz.build.dir" value="smviz-build" />
+  <property name="gen-jar" value="generator.jar" />
+  <property name="sim-jar" value="simulator.jar" />
+  <property name="smviz-jar" value="smviz.jar" />
+  <!-- ProcessLogFile & coverage needs these arguments to be sent-->
+  <property name="filename" value=""/>
+  <property name="outputdir" value=""/>
+  <property name="coveragetype" value=""/>	
+
+  <path id="compile.classpath">
+       <fileset dir="${lib.dir}">
+             <include name="**/*.jar"/>
+       		 <exclude name="**/swt*.jar"/>
+       </fileset>
+  	   <path location="junit/lib/junit.jar"></path>
+       <pathelement location="${classes.dir}"/>
+
+  	   <path path="properties" />
+  </path>
+
+
+  <target name="prepare">
+    <tstamp/>
+    <mkdir dir="${classes.dir}" />
+    <mkdir dir="${testing.classes.dir}"/>
+  	<!-- Setting the swt.jar value based on the operating system.
+  		 This jar is OS specific.	 -->
+  	<condition property="swt.jar" value="${lib.dir}/swt-win32.jar">
+  	    		<os family="windows"/>
+  	</condition>
+  	<condition property="swt.jar" value="${lib.dir}/swt-MacOSX-carbon-debug.jar">
+  		<os family="mac"/>
+  	</condition>
+  	<condition property="swt.jar" value="${lib.dir}/swt-linux.jar">
+  	  		<os family="unix"/>
+  	</condition>
+
+  	<!--  Mac needs special jvm arguments for running SWT components. -->
+  	<condition property="jvm.arguments" value="-XstartOnFirstThread" else="">
+  	 	<os family="mac"/>
+  	 </condition>
+  	
+  
+  </target>
+
+  <target name="compile-generator" depends="prepare">
+    <javac
+      debug="true"
+      srcdir="${src.dir}"
+      destdir="${classes.dir}"
+      excludes="org/igstk/validation/simulator/**,org/igstk/validation/tools/smviz/**"
+      includes="org/igstk/validation/generator/**">
+      <classpath>
+             <path refid="compile.classpath"/>
+     </classpath>
+    </javac>
+  </target>
+
+  <target name="compile-simulator" depends="prepare,compile-generator">
+    <javac
+      debug="${debug}"
+      srcdir="${src.dir}"
+      destdir="${classes.dir}"
+      excludes="org/igstk/validation/generator/**,org/igstk/validation/tools/smviz/**"
+      includes="org/igstk/validation/*.java,org/igstk/validation/exception/**,org/igstk/validation/simulator/**,org/igstk/validation/util/**" 	>
+      <classpath>
+             <path refid="compile.classpath"/>
+             <path path="${gen-jar}" />
+      	     <path path="${swt.jar}" />
+     </classpath>
+    </javac>
+  </target>
+
+    <target name="compile-smviz" depends="prepare,compile-simulator">
+	  <javac
+	    debug="${debug}"
+	    srcdir="${src.dir}"
+	    destdir="${classes.dir}"
+	    excludes="org/igstk/validation/generator/**,org/igstk/validation/simulator/**"
+	    includes="org/igstk/validation/tools/smviz/**">
+	    <classpath>
+	           <path refid="compile.classpath"/>
+	           <path path="${sim-jar}" />
+	    	   <path path="${swt.jar}" />
+	   </classpath>
+	  </javac>
+	</target>
+
+  <target name="compile-junit" depends="clean,prepare,dist-smviz">
+  	<copy file="${properties.dir}/gen.log4j.properties" tofile="${classes.dir}/log4j.properties"/> 
+  	<javac
+      debug="true"
+      srcdir="${testing.dir}"
+      destdir="${testing.classes.dir}"
+      includes="org/igstk/validation/**">
+      <classpath>
+             <path refid="compile.classpath"/>
+     </classpath>
+    </javac>
+  </target>
+
+  <target name="compile" depends="prepare">
+  	<copy file="${properties.dir}/gen.log4j.properties" tofile="${classes.dir}/log4j.properties"/> 
+  	<javac debug="${debug}" srcdir="${src.dir}" destdir="${classes.dir}">
+      <classpath>
+             <path refid="compile.classpath"/>
+      		 <path path="${swt.jar}" />
+      	     
+     </classpath>
+    </javac>
+  </target>
+
+  <target name="dist-generator" depends="compile-generator">
+    <mkdir dir="${gen.build.dir}"/>
+    <copy file="${properties.dir}/gen.log4j.properties" tofile="${gen.build.dir}/log4j.properties"/>
+    <copy todir="${gen.build.dir}">
+      <fileset dir="${classes.dir}"
+	       includes="org/igstk/validation/generator/**"/>
+    </copy>
+    <jar file="${gen-jar}" basedir="${gen.build.dir}" />
+    <delete dir="${gen.build.dir}"/>
+  </target>
+
+  <target name="dist-simulator" depends="compile-simulator,dist-generator">
+    <mkdir dir="${sim.build.dir}"/>
+    <mkdir dir="${sim.build.dir}/${lib.dir}"/>
+    <copy file="${properties.dir}/sim.log4j.properties" tofile="${sim.build.dir}/log4j.properties"/>
+    <copy todir="${sim.build.dir}">
+      <fileset dir="${classes.dir}"
+	       includes="org/igstk/validation/simulator/**,org/igstk/validation/*.class,org/igstk/validation/exception/**,org/igstk/validation/util/**"
+      	   excludes="org/igstk/validation/generator/**,org/igstk/validation/tools/smviz/**"
+      	      />
+    </copy>
+    <jar file="${sim-jar}" basedir="${sim.build.dir}" />
+    <delete dir="${sim.build.dir}"/>
+  </target>
+
+	<target name="dist-smviz" depends="compile-smviz,dist-simulator">
+	    <mkdir dir="${smviz.build.dir}"/>
+	    <mkdir dir="${smviz.build.dir}/${lib.dir}"/>
+	    <copy todir="${smviz.build.dir}">
+	      <fileset dir="${classes.dir}"
+		       includes="org/igstk/validation/tools/smviz/**"/>
+	    </copy>
+	    <jar file="${smviz-jar}" basedir="${smviz.build.dir}" />
+	    <delete dir="${smviz.build.dir}"/>
+	  </target>
+
+  <target name="run-simulator" depends="dist-simulator">
+  	 <java classname="org.igstk.validation.simulator.IgstkvtVMStaticRunner">
+         <classpath>
+             <path refid="compile.classpath"/>
+             <path path="${gen-jar}" />
+             <path path="${sim-jar}" />
+     </classpath>
+       </java>
+  </target>
+
+	<target name="run-smviz" depends="dist-smviz">
+	  	 <java classname="org.igstk.validation.tools.smviz.gui.IgstkvtSMVIZ" fork="yes">
+	  	 	<jvmarg value="${jvm.arguments}"/>
+	         <classpath>
+	             <path refid="compile.classpath"/>
+	         	 <path path="${swt.jar}" />
+	             <path path="${gen-jar}" />
+	             <path path="${sim-jar}" />
+	         	 <path path="icons" />
+	     </classpath>
+	       </java>
+	  </target>
+	
+	<target name="run-processLogFile" depends="compile">
+		<java classname="org.igstk.validation.generator.processLog.IgstkvtProcessLogFile">
+			<arg value="${filename}"/>
+			<arg value="${outputdir}"/>
+			<classpath>
+				<path refid="compile.classpath"/>
+			</classpath>
+		</java>
+	</target>
+
+	<target name="run-coverage" depends="compile">
+			<java classname="org.igstk.validation.generator.coverage.IgstkvtMain">
+				<arg value="${coveragetype}"/>
+				<arg value="${filename}"/>
+				<arg value="${outputdir}"/>
+				<classpath>
+					<path refid="compile.classpath"/>
+				</classpath>
+			</java>
+		</target>
+
+
+	<target name="run-junit" depends="compile-junit">
+		<junit>
+			<classpath refid="compile.classpath"/>
+			<classpath>
+				<pathelement location="${testing.classes.dir}"/>
+			</classpath>
+			<formatter type="plain" usefile="false" />
+			<test name="org.igstk.validation.simulator.IgstkvtVMTest"> </test>
+			<test name="org.igstk.validation.simulator.IgstkvtStateMachineExecutorTest"> </test>
+			<test name="org.igstk.validation.simulator.util.IgstkvtVMHelperTest"> </test>
+			<test name="org.igstk.validation.util.IgstkvtSCXMLParserTest"> </test>
+			<test name="org.igstk.validation.util.IgstkvtConfigParserTest"> </test>
+			<test name="org.igstk.validation.tools.smviz.gui.IgstkvtStateMachineDiagramGeneratorTest"></test>
+			<test name="org.igstk.validation.generator.processLog.IgstkvtProcessLogFileTest"></test>
+			<test name="org.igstk.validation.generator.coverage.IgstkvtStatementCoverageTest"></test>
+			<test name="org.igstk.validation.generator.coverage.IgstkvtTransitionCoverageTest"></test>
+			<test name="org.igstk.validation.generator.coverage.IgstkvtGraphTest"></test>
+			<test name="org.igstk.validation.generator.coverage.IgstkvtSAXHandlerTest"></test>
+		</junit>
+	</target>
+	
+	<target name="targets">
+		<echo>Following are the available targets</echo>
+		<echo>1. run-coverage -Dcoveragetype=[nodecoverage|edgecoverage] -Dfilename=[filepath for scxmlfiles] -Doutputdir=[output directory where the send event files are to be created]</echo>
+		<echo>2. run-processLogFile -Dfilename=[filepath for the log file] -Doutputdir=[filepath of the output directory to store the sendevent files]</echo>
+		<echo>3. run-junit</echo>
+	    <echo>4. run-simulator</echo>
+		<echo>5. run-smviz</echo>
+		
+		<echo>You can refer the Readme.txt file in each source folder for further details.</echo>
+	</target>
+	
+	<target name="clean">
+    <delete dir="${gen.build.dir}" />
+    <delete dir="${sim.build.dir}" />
+    <delete file="${gen-jar}" />
+    <delete file="${sim-jar}" />
+  	<delete file="${smviz-jar}" />
+    <delete dir="${classes.dir}"/>
+    <delete dir="${testing.classes.dir}"/>
+  </target>
+</project>

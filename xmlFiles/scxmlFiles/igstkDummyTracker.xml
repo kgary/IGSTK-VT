@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<scxml version="1.0"
+initialstate="IdleState"
+>
+  <state id="IdleState">
+    <transition event="establishCommunicationInput">
+      <target next="AttemptingToEstablishCommunicationState"/>
+    </transition>
+  </state>
+  <state id="AttemptingToEstablishCommunicationState">
+    <transition event="successInput">
+      <target next="CommunicationEstablishedState"/>
+    </transition>
+    <transition event="failureInput">
+      <target next="IdleState"/>
+    </transition>
+  </state>
+  <state id="AttemptingToCloseCommunicationState">
+    <transition event="successInput">
+      <target next="IdleState"/>
+    </transition>
+    <transition event="failureInput">
+      <target next="CommunicationEstablishedState"/>
+    </transition>
+  </state>
+  <state id="CommunicationEstablishedState">
+    <transition event="startTrackingInput">
+      <target next="AttemptingToTrackState"/>
+    </transition>
+    <transition event="attachTrackerToolInput">
+      <target next="AttemptingToAttachTrackerToolState"/>
+    </transition>
+    <transition event="closeCommunicationInput">
+      <target next="AttemptingToCloseCommunicationState"/>
+    </transition>
+  </state>
+  <state id="AttemptingToAttachTrackerToolState">
+    <transition event="successInput">
+      <target next="TrackerToolAttachedState"/>
+    </transition>
+    <transition event="failureInput">
+      <target next="CommunicationEstablishedState"/>
+    </transition>
+  </state>
+  <state id="TrackerToolAttachedState">
+    <transition event="startTrackingInput">
+      <target next="AttemptingToTrackState"/>
+    </transition>
+    <transition event="attachTrackerToolInput">
+      <target next="AttemptingToAttachTrackerToolState"/>
+    </transition>
+    <transition event="closeCommunicationInput">
+      <target next="AttemptingToCloseCommunicationState"/>
+    </transition>
+  </state>
+  <state id="AttemptingToTrackState">
+    <transition event="successInput">
+      <target next="TrackingState"/>
+    </transition>
+    <transition event="failureInput">
+      <target next="CommunicationEstablishedState"/>
+    </transition>
+  </state>
+  <state id="TrackingState">
+    <transition event="updateStatusInput">
+      <target next="AttemptingToUpdateState"/>
+    </transition>
+    <transition event="stopTrackingInput">
+      <target next="AttemptingToStopTrackingState"/>
+    </transition>
+    <transition event="resetInput">
+      <target next="CommunicationEstablishedState"/>
+    </transition>
+    <transition event="closeCommunicationInput">
+      <target next="AttemptingToCloseCommunicationState"/>
+    </transition>
+  </state>
+  <state id="AttemptingToUpdateState">
+    <transition event="successInput">
+      <target next="TrackingState"/>
+    </transition>
+    <transition event="failureInput">
+      <target next="TrackingState"/>
+    </transition>
+  </state>
+  <state id="AttemptingToStopTrackingState">
+    <transition event="successInput">
+      <target next="CommunicationEstablishedState"/>
+    </transition>
+    <transition event="failureInput">
+      <target next="TrackingState"/>
+    </transition>
+  </state>
+</scxml>

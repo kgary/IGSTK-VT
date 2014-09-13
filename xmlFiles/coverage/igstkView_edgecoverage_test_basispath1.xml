@@ -1,0 +1,21 @@
+<?xml version="1.0"?> 
+  <igstk> 
+    <metadata> 
+	<factory type="IgstkvtTransitionCoverage"	Time="Wed Feb 4 22:55:16 2009">
+	      <factoryparam name="includeselftransitions" value="false" /> 
+	</factory> 
+	<component type="igstkView"/> 
+    </metadata> 
+
+<events> 
+
+	<send event="initializeInteractorInput"/>
+
+	<send event="startRefreshingInput"/>
+
+	<send event="stopRefreshingInput"/>
+
+	<send event="startRefreshingInput"/>
+
+</events> 
+</igstk>

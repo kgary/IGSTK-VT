@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<scxml version="1.0"
+initialstate="NullConeObjectState"
+>
+  <state id="NullConeObjectState">
+    <transition event="validConeObjectInput">
+      <target next="ValidConeObjectState"/>
+    </transition>
+  </state>
+  <state id="ValidConeObjectState">
+    <transition event="nullConeObjectInput">
+      <target next="NullConeObjectState"/>
+    </transition>
+  </state>
+</scxml>

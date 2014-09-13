@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<scxml version="1.0"
+initialstate="NullEllipsoidObjectState"
+>
+  <state id="NullEllipsoidObjectState">
+    <transition event="validEllipsoidObjectInput">
+      <target next="ValidEllipsoidObjectState"/>
+    </transition>
+  </state>
+  <state id="ValidEllipsoidObjectState">
+    <transition event="nullEllipsoidObjectInput">
+      <target next="NullEllipsoidObjectState"/>
+    </transition>
+  </state>
+</scxml>

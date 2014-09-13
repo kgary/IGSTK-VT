@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<scxml version="1.0"
+initialstate="NullUltrasoundProbeObjectState"
+>
+  <state id="NullUltrasoundProbeObjectState">
+    <transition event="validUltrasoundProbeObjectInput">
+      <target next="ValidUltrasoundProbeObjectState"/>
+    </transition>
+  </state>
+  <state id="ValidUltrasoundProbeObjectState">
+    <transition event="nullUltrasoundProbeObjectInput">
+      <target next="NullUltrasoundProbeObjectState"/>
+    </transition>
+  </state>
+</scxml>

@@ -1,0 +1,15 @@
+<?xml version="1.0"?> 
+  <igstk> 
+    <metadata> 
+	<factory type="IgstkvtStatementCoverage"	Time="Wed Feb 4 22:45:30 2009">
+	      <factoryparam name="includeselftransitions" value="false" /> 
+	</factory> 
+	<component type="igstkEllipsoidObjectRepresentation"/> 
+    </metadata> 
+
+<events> 
+
+	<send event="validEllipsoidObjectInput"/>
+
+</events> 
+</igstk>

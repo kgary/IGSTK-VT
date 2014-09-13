@@ -1,0 +1,19 @@
+<?xml version="1.0"?> 
+  <igstk> 
+    <metadata> 
+	<factory type="IgstkvtTransitionCoverage"	Time="Wed Feb 4 22:35:10 2009">
+	      <factoryparam name="includeselftransitions" value="false" /> 
+	</factory> 
+	<component type="igstkAxesObjectRepresentation"/> 
+    </metadata> 
+
+<events> 
+
+	<send event="validAxesObjectInput"/>
+
+	<send event="nullAxesObjectInput"/>
+
+	<send event="validAxesObjectInput"/>
+
+</events> 
+</igstk>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<vtconfig>
+        <drool-files>
+                <file>rules/igstk_5.drl</file>
+        </drool-files>
+	<state-machines>
+		<state-machine id="1" name="View">
+			<file>
+				igstkView.xml	
+			</file>
+			<sendEventFile>
+				igstkView_nodecoverage_test1.xml
+			</sendEventFile>
+		</state-machine>
+		
+		<state-machine id="2" name="View">
+			<file>
+				igstkView.xml
+			</file>
+			<sendEventFile>
+				igstkView_edgecoverage_test_basispath1.xml
+			</sendEventFile>
+		</state-machine>
+	</state-machines>
+</vtconfig>
+
+
+
+

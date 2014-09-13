@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<scxml version="1.0"
+initialstate="IdleState"
+>
+  <state id="IdleState">
+    <transition event="imageLandmarkInput">
+      <target next="ImageLandmark1AddedState"/>
+    </transition>
+  </state>
+  <state id="ImageLandmark1AddedState">
+    <transition event="trackerLandmarkInput">
+      <target next="TrackerLandmark1AddedState"/>
+    </transition>
+    <transition event="resetRegistrationInput">
+      <target next="IdleState"/>
+    </transition>
+  </state>
+  <state id="TrackerLandmark1AddedState">
+    <transition event="imageLandmarkInput">
+      <target next="ImageLandmark2AddedState"/>
+    </transition>
+    <transition event="resetRegistrationInput">
+      <target next="IdleState"/>
+    </transition>
+  </state>
+  <state id="ImageLandmark2AddedState">
+    <transition event="trackerLandmarkInput">
+      <target next="TrackerLandmark2AddedState"/>
+    </transition>
+    <transition event="resetRegistrationInput">
+      <target next="IdleState"/>
+    </transition>
+  </state>
+  <state id="TrackerLandmark2AddedState">
+    <transition event="imageLandmarkInput">
+      <target next="ImageLandmark3AddedState"/>
+    </transition>
+    <transition event="resetRegistrationInput">
+      <target next="IdleState"/>
+    </transition>
+  </state>
+  <state id="ImageLandmark3AddedState">
+    <transition event="trackerLandmarkInput">
+      <target next="TrackerLandmark3AddedState"/>
+    </transition>
+    <transition event="resetRegistrationInput">
+      <target next="IdleState"/>
+    </transition>
+  </state>
+  <state id="TrackerLandmark3AddedState">
+    <transition event="imageLandmarkInput">
+      <target next="ImageLandmark3AddedState"/>
+    </transition>
+    <transition event="computeTransformInput">
+      <target next="AttemptingToComputeTransformState"/>
+    </transition>
+    <transition event="resetRegistrationInput">
+      <target next="IdleState"/>
+    </transition>
+  </state>
+  <state id="AttemptingToComputeTransformState">
+    <transition event="resetRegistrationInput">
+      <target next="IdleState"/>
+    </transition>
+    <transition event="transformComputationFailureInput">
+      <target next="TrackerLandmark3AddedState"/>
+    </transition>
+    <transition event="transformComputationSuccessInput">
+      <target next="TransformComputedState"/>
+    </transition>
+  </state>
+  <state id="TransformComputedState">
+    <transition event="resetRegistrationInput">
+      <target next="IdleState"/>
+    </transition>
+  </state>
+</scxml>

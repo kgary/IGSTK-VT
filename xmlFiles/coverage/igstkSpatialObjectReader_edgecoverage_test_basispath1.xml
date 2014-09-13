@@ -1,0 +1,67 @@
+<?xml version="1.0"?> 
+  <igstk> 
+    <metadata> 
+	<factory type="IgstkvtTransitionCoverage"	Time="Wed Feb 4 22:53:09 2009">
+	      <factoryparam name="includeselftransitions" value="false" /> 
+	</factory> 
+	<component type="igstkSpatialObjectReader"/> 
+    </metadata> 
+
+<events> 
+
+	<send event="objectFileNameValidInput"/>
+
+	<send event="objectFileNameIsEmptyInput"/>
+
+	<send event="objectFileNameValidInput"/>
+
+	<send event="objectFileNameDoesNotExistInput"/>
+
+	<send event="objectFileNameValidInput"/>
+
+	<send event="objectFileNameIsDirectoryInput"/>
+
+	<send event="objectFileNameValidInput"/>
+
+	<send event="readObjectRequestInput"/>
+
+	<send event="objectReadingErrorInput"/>
+
+	<send event="objectFileNameValidInput"/>
+
+	<send event="readObjectRequestInput"/>
+
+	<send event="objectReadingSuccessInput"/>
+
+	<send event="objectFileNameValidInput"/>
+
+	<send event="readObjectRequestInput"/>
+
+	<send event="objectReadingSuccessInput"/>
+
+	<send event="objectFileNameIsEmptyInput"/>
+
+	<send event="objectFileNameValidInput"/>
+
+	<send event="readObjectRequestInput"/>
+
+	<send event="objectReadingSuccessInput"/>
+
+	<send event="objectFileNameDoesNotExistInput"/>
+
+	<send event="objectFileNameValidInput"/>
+
+	<send event="readObjectRequestInput"/>
+
+	<send event="objectReadingSuccessInput"/>
+
+	<send event="objectFileNameIsDirectoryInput"/>
+
+	<send event="objectFileNameValidInput"/>
+
+	<send event="readObjectRequestInput"/>
+
+	<send event="objectReadingSuccessInput"/>
+
+</events> 
+</igstk>

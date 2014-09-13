@@ -1,0 +1,21 @@
+<?xml version="1.0"?> 
+  <igstk> 
+    <metadata> 
+	<factory type="IgstkvtTransitionCoverage"	Time="Wed Feb 4 22:34:39 2009">
+	      <factoryparam name="includeselftransitions" value="false" /> 
+	</factory> 
+	<component type="igstkAuroraTrackerTool"/> 
+    </metadata> 
+
+<events> 
+
+	<send event="select6DOFTrackerToolInput"/>
+
+	<send event="validPortNumberInput"/>
+
+	<send event="validSROMFileNameInput"/>
+
+	<send event="validPartNumberInput"/>
+
+</events> 
+</igstk>

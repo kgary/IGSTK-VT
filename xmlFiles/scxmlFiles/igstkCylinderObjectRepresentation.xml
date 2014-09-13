@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<scxml version="1.0"
+initialstate="NullCylinderObjectState"
+>
+  <state id="NullCylinderObjectState">
+    <transition event="validCylinderObjectInput">
+      <target next="ValidCylinderObjectState"/>
+    </transition>
+  </state>
+  <state id="ValidCylinderObjectState">
+    <transition event="nullCylinderObjectInput">
+      <target next="NullCylinderObjectState"/>
+    </transition>
+  </state>
+</scxml>

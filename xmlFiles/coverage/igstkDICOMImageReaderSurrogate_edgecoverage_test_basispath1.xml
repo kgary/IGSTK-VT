@@ -1,0 +1,55 @@
+<?xml version="1.0"?> 
+  <igstk> 
+    <metadata> 
+	<factory type="IgstkvtTransitionCoverage"	Time="Wed Feb 4 22:42:57 2009">
+	      <factoryparam name="includeselftransitions" value="false" /> 
+	</factory> 
+	<component type="igstkDICOMImageReaderSurrogate"/> 
+    </metadata> 
+
+<events> 
+
+	<send event="imageDirectoryNameValidInput"/>
+
+	<send event="resetReaderInput"/>
+
+	<send event="imageDirectoryNameValidInput"/>
+
+	<send event="imageSeriesFileNamesGeneratingErrorInput"/>
+
+	<send event="imageDirectoryNameValidInput"/>
+
+	<send event="imageSeriesFileNamesGeneratingSuccessInput"/>
+
+	<send event="readImageInput"/>
+
+	<send event="resetReaderInput"/>
+
+	<send event="imageDirectoryNameValidInput"/>
+
+	<send event="imageSeriesFileNamesGeneratingSuccessInput"/>
+
+	<send event="readImageInput"/>
+
+	<send event="imageReadingErrorInput"/>
+
+	<send event="imageDirectoryNameValidInput"/>
+
+	<send event="imageSeriesFileNamesGeneratingSuccessInput"/>
+
+	<send event="readImageInput"/>
+
+	<send event="imageReadingSuccessInput"/>
+
+	<send event="resetReaderInput"/>
+
+	<send event="imageDirectoryNameValidInput"/>
+
+	<send event="imageSeriesFileNamesGeneratingSuccessInput"/>
+
+	<send event="readImageInput"/>
+
+	<send event="imageReadingSuccessInput"/>
+
+</events> 
+</igstk>

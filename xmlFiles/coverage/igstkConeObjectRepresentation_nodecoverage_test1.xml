@@ -1,0 +1,15 @@
+<?xml version="1.0"?> 
+  <igstk> 
+    <metadata> 
+	<factory type="IgstkvtStatementCoverage"	Time="Wed Feb 4 22:36:58 2009">
+	      <factoryparam name="includeselftransitions" value="false" /> 
+	</factory> 
+	<component type="igstkConeObjectRepresentation"/> 
+    </metadata> 
+
+<events> 
+
+	<send event="validConeObjectInput"/>
+
+</events> 
+</igstk>

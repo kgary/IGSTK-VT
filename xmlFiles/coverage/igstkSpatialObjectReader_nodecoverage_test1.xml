@@ -1,0 +1,19 @@
+<?xml version="1.0"?> 
+  <igstk> 
+    <metadata> 
+	<factory type="IgstkvtStatementCoverage"	Time="Wed Feb 4 22:53:00 2009">
+	      <factoryparam name="includeselftransitions" value="false" /> 
+	</factory> 
+	<component type="igstkSpatialObjectReader"/> 
+    </metadata> 
+
+<events> 
+
+	<send event="objectFileNameValidInput"/>
+
+	<send event="readObjectRequestInput"/>
+
+	<send event="objectReadingSuccessInput"/>
+
+</events> 
+</igstk>

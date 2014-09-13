@@ -1,0 +1,21 @@
+<?xml version="1.0"?> 
+  <igstk> 
+    <metadata> 
+	<factory type="IgstkvtStatementCoverage"	Time="Wed Feb 4 22:46:57 2009">
+	      <factoryparam name="includeselftransitions" value="false" /> 
+	</factory> 
+	<component type="igstkImageSpatialObjectRepresentation"/> 
+    </metadata> 
+
+<events> 
+
+	<send event="validImageSpatialObjectInput"/>
+
+	<send event="validOrientationInput"/>
+
+	<send event="validSliceNumberInput"/>
+
+	<send event="setSliceNumberInput"/>
+
+</events> 
+</igstk>

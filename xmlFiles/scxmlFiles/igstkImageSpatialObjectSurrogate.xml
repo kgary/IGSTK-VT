@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<scxml version="1.0"
+initialstate="InitialState"
+>
+  <state id="InitialState">
+    <transition event="validImageInput">
+      <target next="ImageSetState"/>
+    </transition>
+  </state>
+  <state id="ImageSetState">
+    <transition event="invalidImageInput">
+      <target next="InitialState"/>
+    </transition>
+  </state>
+</scxml>

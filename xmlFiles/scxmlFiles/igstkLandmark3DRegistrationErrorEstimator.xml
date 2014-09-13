@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<scxml version="1.0"
+initialstate="IdleState"
+>
+  <state id="IdleState">
+    <transition event="landmarkContainerInput">
+      <target next="LandmarkContainerSetState"/>
+    </transition>
+  </state>
+  <state id="LandmarkContainerSetState">
+    <transition event="landmarkRegistrationErrorInput">
+      <target next="LandmarkRegistrationErrorSetState"/>
+    </transition>
+  </state>
+  <state id="LandmarkRegistrationErrorSetState">
+    <transition event="targetPointInput">
+      <target next="TargetPointSetState"/>
+    </transition>
+  </state>
+  <state id="TargetPointSetState">
+    <transition event="estimateTargetPointRegistrationErrorInput">
+      <target next="AttemptingToEstimateTargetRegstirationErrorState"/>
+    </transition>
+  </state>
+  <state id="AttemptingToEstimateTargetRegstirationErrorState">
+    <transition event="targetPointRegistrationErrorEstimationSuccessInput">
+      <target next="TargetRegistrationErrorEstimatedState"/>
+    </transition>
+    <transition event="targetPointRegistrationErrorEstimationFailureInput">
+      <target next="TargetPointSetState"/>
+    </transition>
+  </state>
+  <state id="TargetRegistrationErrorEstimatedState">
+    <transition event="targetPointInput">
+      <target next="TargetPointSetState"/>
+    </transition>
+  </state>
+</scxml>

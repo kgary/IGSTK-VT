@@ -1,0 +1,15 @@
+<?xml version="1.0"?> 
+  <igstk> 
+    <metadata> 
+	<factory type="IgstkvtTransitionCoverage"	Time="Wed Feb 4 22:54:00 2009">
+	      <factoryparam name="includeselftransitions" value="false" /> 
+	</factory> 
+	<component type="igstkSpatialObjectSurrogate"/> 
+    </metadata> 
+
+<events> 
+
+	<send event="internalSpatialObjectValidInput"/>
+
+</events> 
+</igstk>

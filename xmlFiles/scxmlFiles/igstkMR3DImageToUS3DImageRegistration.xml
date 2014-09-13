@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<scxml version="1.0"
+initialstate="IdleState"
+>
+  <state id="IdleState">
+    <transition event="validMovingMR3DInput">
+      <target next="MRImageSetState"/>
+    </transition>
+    <transition event="validFixedUS3DInput">
+      <target next="USImageSetState"/>
+    </transition>
+  </state>
+  <state id="MRImageSetState">
+    <transition event="resetRegistrationInput">
+      <target next="IdleState"/>
+    </transition>
+    <transition event="validFixedUS3DInput">
+      <target next="ImagesSetState"/>
+    </transition>
+  </state>
+  <state id="USImageSetState">
+    <transition event="resetRegistrationInput">
+      <target next="IdleState"/>
+    </transition>
+    <transition event="validMovingMR3DInput">
+      <target next="ImagesSetState"/>
+    </transition>
+  </state>
+  <state id="ImagesSetState">
+    <transition event="resetRegistrationInput">
+      <target next="IdleState"/>
+    </transition>
+    <transition event="validRegistrationInput">
+      <target next="RegistrationCalculatedState"/>
+    </transition>
+  </state>
+  <state id="RegistrationCalculatedState">
+    <transition event="resetRegistrationInput">
+      <target next="IdleState"/>
+    </transition>
+    <transition event="validMovingMR3DInput">
+      <target next="ImagesSetState"/>
+    </transition>
+    <transition event="validFixedUS3DInput">
+      <target next="ImagesSetState"/>
+    </transition>
+  </state>
+</scxml>

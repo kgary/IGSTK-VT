@@ -1,0 +1,145 @@
+<?xml version="1.0"?> 
+  <igstk> 
+    <metadata> 
+	<factory type="IgstkvtTransitionCoverage"	Time="Wed Feb 4 22:43:21 2009">
+	      <factoryparam name="includeselftransitions" value="false" /> 
+	</factory> 
+	<component type="igstkDummyTracker"/> 
+    </metadata> 
+
+<events> 
+
+	<send event="establishCommunicationInput"/>
+
+	<send event="failureInput"/>
+
+	<send event="establishCommunicationInput"/>
+
+	<send event="successInput"/>
+
+	<send event="closeCommunicationInput"/>
+
+	<send event="failureInput"/>
+
+	<send event="closeCommunicationInput"/>
+
+	<send event="successInput"/>
+
+	<send event="establishCommunicationInput"/>
+
+	<send event="successInput"/>
+
+	<send event="closeCommunicationInput"/>
+
+	<send event="failureInput"/>
+
+	<send event="attachTrackerToolInput"/>
+
+	<send event="failureInput"/>
+
+	<send event="closeCommunicationInput"/>
+
+	<send event="failureInput"/>
+
+	<send event="attachTrackerToolInput"/>
+
+	<send event="successInput"/>
+
+	<send event="attachTrackerToolInput"/>
+
+	<send event="successInput"/>
+
+	<send event="closeCommunicationInput"/>
+
+	<send event="failureInput"/>
+
+	<send event="attachTrackerToolInput"/>
+
+	<send event="successInput"/>
+
+	<send event="startTrackingInput"/>
+
+	<send event="failureInput"/>
+
+	<send event="closeCommunicationInput"/>
+
+	<send event="failureInput"/>
+
+	<send event="attachTrackerToolInput"/>
+
+	<send event="successInput"/>
+
+	<send event="startTrackingInput"/>
+
+	<send event="successInput"/>
+
+	<send event="resetInput"/>
+
+	<send event="closeCommunicationInput"/>
+
+	<send event="failureInput"/>
+
+	<send event="attachTrackerToolInput"/>
+
+	<send event="successInput"/>
+
+	<send event="startTrackingInput"/>
+
+	<send event="successInput"/>
+
+	<send event="closeCommunicationInput"/>
+
+	<send event="failureInput"/>
+
+	<send event="attachTrackerToolInput"/>
+
+	<send event="successInput"/>
+
+	<send event="startTrackingInput"/>
+
+	<send event="successInput"/>
+
+	<send event="updateStatusInput"/>
+
+	<send event="successInput"/>
+
+	<send event="updateStatusInput"/>
+
+	<send event="failureInput"/>
+
+	<send event="updateStatusInput"/>
+
+	<send event="successInput"/>
+
+	<send event="stopTrackingInput"/>
+
+	<send event="failureInput"/>
+
+	<send event="updateStatusInput"/>
+
+	<send event="successInput"/>
+
+	<send event="stopTrackingInput"/>
+
+	<send event="successInput"/>
+
+	<send event="closeCommunicationInput"/>
+
+	<send event="failureInput"/>
+
+	<send event="attachTrackerToolInput"/>
+
+	<send event="successInput"/>
+
+	<send event="startTrackingInput"/>
+
+	<send event="successInput"/>
+
+	<send event="updateStatusInput"/>
+
+	<send event="successInput"/>
+
+	<send event="stopTrackingInput"/>
+
+</events> 
+</igstk>

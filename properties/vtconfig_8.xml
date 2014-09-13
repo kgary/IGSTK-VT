@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<vtconfig>
+        <drool-files>
+		<file>rules/igstk_8.drl</file>
+	</drool-files>
+	<state-machines>
+		<state-machine id="1" name="DICOM Image Reader">
+			<file>
+				igstkDICOMImageReaderSurrogate.xml
+			</file>
+			<sendEventFile>
+				igstkDICOMImageReaderSurrogate_edgecoverage_test_basispath1.xml
+			</sendEventFile>
+		</state-machine>
+		
+		<state-machine id="2" name="DICOM Image Reader">
+			<file>
+				igstkDICOMImageReaderSurrogate.xml
+			</file>
+			<sendEventFile>
+				igstkDICOMImageReaderSurrogate_nodecoverage_test1.xml
+			</sendEventFile>
+		</state-machine>
+		
+		
+	</state-machines>
+</vtconfig>
+
+
+
+
+

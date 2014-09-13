@@ -1,0 +1,29 @@
+<?xml version="1.0"?> 
+  <igstk> 
+    <metadata> 
+	<factory type="IgstkvtTransitionCoverage"	Time="Wed Feb 4 22:50:35 2009">
+	      <factoryparam name="includeselftransitions" value="false" /> 
+	</factory> 
+	<component type="igstkObjectRepresentationSurrogate"/> 
+    </metadata> 
+
+<events> 
+
+	<send event="validSpatialObjectInput"/>
+
+	<send event="nullSpatialObjectInput"/>
+
+	<send event="validSpatialObjectInput"/>
+
+	<send event="updateRepresentationInput"/>
+
+	<send event="transformNotAvailableInput"/>
+
+	<send event="updateRepresentationInput"/>
+
+	<send event="spatialObjectTransformInput"/>
+
+	<send event="updateRepresentationInput"/>
+
+</events> 
+</igstk>

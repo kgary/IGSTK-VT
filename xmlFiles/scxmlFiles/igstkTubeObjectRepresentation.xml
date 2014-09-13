@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<scxml version="1.0"
+initialstate="NullTubeObjectState"
+>
+  <state id="NullTubeObjectState">
+    <transition event="validTubeObjectInput">
+      <target next="ValidTubeObjectState"/>
+    </transition>
+  </state>
+  <state id="ValidTubeObjectState">
+    <transition event="nullTubeObjectInput">
+      <target next="NullTubeObjectState"/>
+    </transition>
+  </state>
+</scxml>

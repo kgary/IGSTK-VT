@@ -1,0 +1,33 @@
+#created on: Feb 18, 2008
+package org.igstk.validation.simulator
+
+#list any import classes here.
+
+import org.igstk.validation.simulator.IgstkvtStateMachineExecutor;
+import org.igstk.validation.IgstkvtStateMachine;
+
+#declare any global variables here
+
+
+rule "Rule 1"
+	
+	when
+		stateMachine : IgstkvtStateMachineExecutor(currentState  == "ObjectReadState" ,stateMachineId == "1") 
+	then 
+		System.out.println("Id of the stateMachine is *********TESTING******: "  + stateMachine.getStateMachineId());
+		stateMachine.notifyListeners("DROOLS: The StateMachine " + stateMachine.getStateMachineName() + "  is in state " + " " + stateMachine.getCurrentState()+
+					" which is against rules!!!" );
+end
+
+rule "Rule 2"
+	when
+		(and stateMachine : IgstkvtStateMachineExecutor(currentState  == "ObjectReadState" ,stateMachineId == "1") 
+			stateMachine1 : IgstkvtStateMachineExecutor( currentState == "ObjectFileNameReadState" , stateMachineId == "2")	)
+	then 
+		System.out.println("Id of the stateMachine is *********TESTING******: "  + stateMachine.getStateMachineId());
+		System.out.println("Id of the stateMachine1 is *********TESTING******: "  + stateMachine1.getStateMachineId());
+		stateMachine.notifyListeners("DROOLS: The StateMachine " + stateMachine.getStateMachineName() + "  is in state " + " " + stateMachine.getCurrentState()+
+					" And the StateMachine " + stateMachine1.getStateMachineName() + " is in state " + " " + stateMachine1.getCurrentState() + " which is against rules!!!" );
+		
+		
+end

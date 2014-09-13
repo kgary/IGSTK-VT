@@ -1,0 +1,1 @@
+These files are used to submit various builds of validation tests on different components of IGSTK. If you want to have different builds as in http://lead2.poly.asu.edu/CDash , you have to copy the CTestConfig_*.cmake file to the root directory and run the igstkNightlybuild.sh.

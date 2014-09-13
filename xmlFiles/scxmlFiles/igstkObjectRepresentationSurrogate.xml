@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<scxml version="1.0"
+initialstate="NullSpatialObjectState"
+>
+  <state id="NullSpatialObjectState">
+    <transition event="validSpatialObjectInput">
+      <target next="ValidSpatialObjectState"/>
+    </transition>
+  </state>
+  <state id="ValidSpatialObjectState">
+    <transition event="nullSpatialObjectInput">
+      <target next="NullSpatialObjectState"/>
+    </transition>
+    <transition event="updateRepresentationInput">
+      <target next="AttemptingGetTransformState"/>
+    </transition>
+  </state>
+  <state id="AttemptingGetTransformState">
+    <transition event="spatialObjectTransformInput">
+      <target next="ValidSpatialObjectState"/>
+    </transition>
+    <transition event="transformNotAvailableInput">
+      <target next="ValidSpatialObjectState"/>
+    </transition>
+  </state>
+</scxml>

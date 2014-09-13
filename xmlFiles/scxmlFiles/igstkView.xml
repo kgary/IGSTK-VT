@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<scxml version="1.0"
+initialstate="IdleState"
+>
+  <state id="IdleState">
+    <transition event="initializeInteractorInput">
+      <target next="InteractorInitializedState"/>
+    </transition>
+  </state>
+  <state id="InteractorInitializedState">
+    <transition event="startRefreshingInput">
+      <target next="RefreshingState"/>
+    </transition>
+  </state>
+  <state id="RefreshingState">
+    <transition event="stopRefreshingInput">
+      <target next="InteractorInitializedState"/>
+    </transition>
+  </state>
+</scxml>

@@ -1,0 +1,21 @@
+<?xml version="1.0"?> 
+  <igstk> 
+    <metadata> 
+	<factory type="NodeCoverage"	Time="Wed Feb 4 22:51:26 2009">
+	      <factoryparam name="includeselftransitions" value="false" /> 
+	</factory> 
+	<component type="igstkPolarisTrackerTool"/> 
+    </metadata> 
+
+<events> 
+
+	<send event="selectWiredTrackerToolInput"/>
+
+	<send event="validPortNumberInput"/>
+
+	<send event="validSROMFileNameInput"/>
+
+	<send event="validPartNumberInput"/>
+
+</events> 
+</igstk>

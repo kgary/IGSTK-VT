@@ -1,0 +1,71 @@
+<?xml version="1.0"?> 
+  <igstk> 
+    <metadata> 
+	<factory type="IgstkvtTransitionCoverage"	Time="Wed Feb 4 22:44:39 2009">
+	      <factoryparam name="includeselftransitions" value="false" /> 
+	</factory> 
+	<component type="igstkDummyTrackerTool"/> 
+    </metadata> 
+
+<events> 
+
+	<send event="configureToolInput"/>
+
+	<send event="toolConfigurationFailureInput"/>
+
+	<send event="configureToolInput"/>
+
+	<send event="toolConfigurationSuccessInput"/>
+
+	<send event="attachToolToTrackerInput"/>
+
+	<send event="attachmentToTrackerFailureInput"/>
+
+	<send event="attachToolToTrackerInput"/>
+
+	<send event="attachmentToTrackerSuccessInput"/>
+
+	<send event="detachTrackerToolFromTrackerInput"/>
+
+	<send event="detachmentFromTrackerFailureInput"/>
+
+	<send event="detachTrackerToolFromTrackerInput"/>
+
+	<send event="detachmentFromTrackerSuccessInput"/>
+
+	<send event="attachToolToTrackerInput"/>
+
+	<send event="attachmentToTrackerSuccessInput"/>
+
+	<send event="detachTrackerToolFromTrackerInput"/>
+
+	<send event="detachmentFromTrackerFailureInput"/>
+
+	<send event="trackingStartedInput"/>
+
+	<send event="trackingStoppedInput"/>
+
+	<send event="detachTrackerToolFromTrackerInput"/>
+
+	<send event="detachmentFromTrackerFailureInput"/>
+
+	<send event="trackingStartedInput"/>
+
+	<send event="trackerToolVisibleInput"/>
+
+	<send event="trackerToolNotAvailableInput"/>
+
+	<send event="trackerToolVisibleInput"/>
+
+	<send event="trackingStoppedInput"/>
+
+	<send event="detachTrackerToolFromTrackerInput"/>
+
+	<send event="detachmentFromTrackerFailureInput"/>
+
+	<send event="trackingStartedInput"/>
+
+	<send event="trackerToolVisibleInput"/>
+
+</events> 
+</igstk>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<scxml version="1.0"
+initialstate="InitialState"
+>
+  <state id="InitialState">
+    <transition event="validFrequencyInput">
+      <target next="StoppedState"/>
+    </transition>
+  </state>
+  <state id="StoppedState">
+    <transition event="invalidLowFrequencyInput">
+      <target next="InitialState"/>
+    </transition>
+    <transition event="invalidHighFrequencyInput">
+      <target next="InitialState"/>
+    </transition>
+    <transition event="startInput">
+      <target next="PulsingState"/>
+    </transition>
+  </state>
+  <state id="PulsingState">
+    <transition event="invalidLowFrequencyInput">
+      <target next="InitialState"/>
+    </transition>
+    <transition event="invalidHighFrequencyInput">
+      <target next="InitialState"/>
+    </transition>
+    <transition event="stopInput">
+      <target next="StoppedState"/>
+    </transition>
+    <transition event="pulseInput">
+      <target next="WaitingEventReturnState"/>
+    </transition>
+    <transition event="eventReturnInput">
+      <target next="StoppedState"/>
+    </transition>
+  </state>
+  <state id="WaitingEventReturnState">
+    <transition event="invalidLowFrequencyInput">
+      <target next="InitialState"/>
+    </transition>
+    <transition event="invalidHighFrequencyInput">
+      <target next="InitialState"/>
+    </transition>
+    <transition event="stopInput">
+      <target next="StoppedState"/>
+    </transition>
+    <transition event="eventReturnInput">
+      <target next="PulsingState"/>
+    </transition>
+  </state>
+</scxml>

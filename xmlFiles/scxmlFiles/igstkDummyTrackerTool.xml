@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<scxml version="1.0"
+initialstate="IdleState"
+>
+  <state id="IdleState">
+    <transition event="configureToolInput">
+      <target next="AttemptingToConfigureTrackerToolState"/>
+    </transition>
+  </state>
+  <state id="AttemptingToConfigureTrackerToolState">
+    <transition event="toolConfigurationSuccessInput">
+      <target next="ConfiguredState"/>
+    </transition>
+    <transition event="toolConfigurationFailureInput">
+      <target next="IdleState"/>
+    </transition>
+  </state>
+  <state id="ConfiguredState">
+    <transition event="attachToolToTrackerInput">
+      <target next="AttemptingToAttachTrackerToolToTrackerState"/>
+    </transition>
+  </state>
+  <state id="AttemptingToAttachTrackerToolToTrackerState">
+    <transition event="attachmentToTrackerSuccessInput">
+      <target next="AttachedState"/>
+    </transition>
+    <transition event="attachmentToTrackerFailureInput">
+      <target next="ConfiguredState"/>
+    </transition>
+  </state>
+  <state id="AttachedState">
+    <transition event="trackingStartedInput">
+      <target next="NotAvailableState"/>
+    </transition>
+    <transition event="detachTrackerToolFromTrackerInput">
+      <target next="AttemptingToDetachTrackerToolFromTrackerState"/>
+    </transition>
+  </state>
+  <state id="AttemptingToDetachTrackerToolFromTrackerState">
+    <transition event="detachmentFromTrackerSuccessInput">
+      <target next="ConfiguredState"/>
+    </transition>
+    <transition event="detachmentFromTrackerFailureInput">
+      <target next="AttachedState"/>
+    </transition>
+  </state>
+  <state id="NotAvailableState">
+    <transition event="trackingStoppedInput">
+      <target next="AttachedState"/>
+    </transition>
+    <transition event="trackerToolVisibleInput">
+      <target next="TrackedState"/>
+    </transition>
+  </state>
+  <state id="TrackedState">
+    <transition event="trackingStoppedInput">
+      <target next="AttachedState"/>
+    </transition>
+    <transition event="trackerToolNotAvailableInput">
+      <target next="NotAvailableState"/>
+    </transition>
+  </state>
+</scxml>

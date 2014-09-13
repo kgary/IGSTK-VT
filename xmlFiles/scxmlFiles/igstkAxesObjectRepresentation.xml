@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<scxml version="1.0"
+initialstate="NullAxesObjectState"
+>
+  <state id="NullAxesObjectState">
+    <transition event="validAxesObjectInput">
+      <target next="ValidAxesObjectState"/>
+    </transition>
+  </state>
+  <state id="ValidAxesObjectState">
+    <transition event="nullAxesObjectInput">
+      <target next="NullAxesObjectState"/>
+    </transition>
+  </state>
+</scxml>

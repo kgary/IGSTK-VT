@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<scxml version="1.0"
+initialstate="IdleState"
+>
+  <state id="IdleState">
+    <transition event="selectWiredTrackerToolInput">
+      <target next="WiredTrackerToolSelectedState"/>
+    </transition>
+    <transition event="selectWirelessTrackerToolInput">
+      <target next="WirelessTrackerToolSelectedState"/>
+    </transition>
+  </state>
+  <state id="WirelessTrackerToolSelectedState">
+    <transition event="validSROMFileNameInput">
+      <target next="WirelessTrackerToolSROMFileNameSpecifiedState"/>
+    </transition>
+  </state>
+  <state id="WiredTrackerToolSelectedState">
+    <transition event="validPortNumberInput">
+      <target next="WiredTrackerToolPortNumberSpecifiedState"/>
+    </transition>
+  </state>
+  <state id="WiredTrackerToolPortNumberSpecifiedState">
+    <transition event="validSROMFileNameInput">
+      <target next="WiredTrackerToolSROMFileNameSpecifiedState"/>
+    </transition>
+  </state>
+  <state id="WirelessTrackerToolSROMFileNameSpecifiedState">
+    <transition event="validPartNumberInput">
+      <target next="WirelessTrackerToolPartNumberSpecifiedState"/>
+    </transition>
+  </state>
+  <state id="WiredTrackerToolSROMFileNameSpecifiedState">
+    <transition event="validPartNumberInput">
+      <target next="WiredTrackerToolPartNumberSpecifiedState"/>
+    </transition>
+  </state>
+  <state id="WirelessTrackerToolPartNumberSpecifiedState">
+  </state>
+  <state id="WiredTrackerToolPartNumberSpecifiedState">
+  </state>
+</scxml>

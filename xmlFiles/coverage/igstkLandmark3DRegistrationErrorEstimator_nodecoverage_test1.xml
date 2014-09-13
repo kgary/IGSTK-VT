@@ -1,0 +1,23 @@
+<?xml version="1.0"?> 
+  <igstk> 
+    <metadata> 
+	<factory type="IgstkvtStatementCoverage"	Time="Wed Feb 4 22:48:13 2009">
+	      <factoryparam name="includeselftransitions" value="false" /> 
+	</factory> 
+	<component type="igstkLandmark3DRegistrationErrorEstimator"/> 
+    </metadata> 
+
+<events> 
+
+	<send event="landmarkContainerInput"/>
+
+	<send event="landmarkRegistrationErrorInput"/>
+
+	<send event="targetPointInput"/>
+
+	<send event="estimateTargetPointRegistrationErrorInput"/>
+
+	<send event="targetPointRegistrationErrorEstimationSuccessInput"/>
+
+</events> 
+</igstk>

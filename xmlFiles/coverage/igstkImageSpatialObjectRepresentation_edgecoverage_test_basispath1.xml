@@ -1,0 +1,119 @@
+<?xml version="1.0"?> 
+  <igstk> 
+    <metadata> 
+	<factory type="IgstkvtTransitionCoverage"	Time="Wed Feb 4 22:46:43 2009">
+	      <factoryparam name="includeselftransitions" value="false" /> 
+	</factory> 
+	<component type="igstkImageSpatialObjectRepresentation"/> 
+    </metadata> 
+
+<events> 
+
+	<send event="validImageSpatialObjectInput"/>
+
+	<send event="emptyImageSpatialObjectInput"/>
+
+	<send event="validImageSpatialObjectInput"/>
+
+	<send event="nullImageSpatialObjectInput"/>
+
+	<send event="validImageSpatialObjectInput"/>
+
+	<send event="validOrientationInput"/>
+
+	<send event="validImageSpatialObjectInput"/>
+
+	<send event="validOrientationInput"/>
+
+	<send event="emptyImageSpatialObjectInput"/>
+
+	<send event="validImageSpatialObjectInput"/>
+
+	<send event="validOrientationInput"/>
+
+	<send event="nullImageSpatialObjectInput"/>
+
+	<send event="validImageSpatialObjectInput"/>
+
+	<send event="validOrientationInput"/>
+
+	<send event="validSliceNumberInput"/>
+
+	<send event="invalidSliceNumberInput"/>
+
+	<send event="validSliceNumberInput"/>
+
+	<send event="validOrientationInput"/>
+
+	<send event="validSliceNumberInput"/>
+
+	<send event="validImageSpatialObjectInput"/>
+
+	<send event="validOrientationInput"/>
+
+	<send event="validSliceNumberInput"/>
+
+	<send event="emptyImageSpatialObjectInput"/>
+
+	<send event="validImageSpatialObjectInput"/>
+
+	<send event="validOrientationInput"/>
+
+	<send event="validSliceNumberInput"/>
+
+	<send event="nullImageSpatialObjectInput"/>
+
+	<send event="validImageSpatialObjectInput"/>
+
+	<send event="validOrientationInput"/>
+
+	<send event="validSliceNumberInput"/>
+
+	<send event="setSliceNumberInput"/>
+
+	<send event="validSliceNumberInput"/>
+
+	<send event="setSliceNumberInput"/>
+
+	<send event="invalidSliceNumberInput"/>
+
+	<send event="validSliceNumberInput"/>
+
+	<send event="setSliceNumberInput"/>
+
+	<send event="validOrientationInput"/>
+
+	<send event="validSliceNumberInput"/>
+
+	<send event="setSliceNumberInput"/>
+
+	<send event="validImageSpatialObjectInput"/>
+
+	<send event="validOrientationInput"/>
+
+	<send event="validSliceNumberInput"/>
+
+	<send event="setSliceNumberInput"/>
+
+	<send event="emptyImageSpatialObjectInput"/>
+
+	<send event="validImageSpatialObjectInput"/>
+
+	<send event="validOrientationInput"/>
+
+	<send event="validSliceNumberInput"/>
+
+	<send event="setSliceNumberInput"/>
+
+	<send event="nullImageSpatialObjectInput"/>
+
+	<send event="validImageSpatialObjectInput"/>
+
+	<send event="validOrientationInput"/>
+
+	<send event="validSliceNumberInput"/>
+
+	<send event="setSliceNumberInput"/>
+
+</events> 
+</igstk>
