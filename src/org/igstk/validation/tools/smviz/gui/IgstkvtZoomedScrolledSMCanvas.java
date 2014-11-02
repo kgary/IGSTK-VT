@@ -33,6 +33,7 @@ import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.ToolBar;
 import org.eclipse.swt.widgets.ToolItem;
+import org.igstk.validation.tools.codegeneration.CodeGeneration;
 import org.igstk.validation.tools.smviz.IgstkvtSMVIZStateMachine;
 
 /**
@@ -257,6 +258,32 @@ public class IgstkvtZoomedScrolledSMCanvas extends Composite {
             }
         });
 
+        /* New Button added for code generation */
+        
+        ToolItem generateCodeToolItem = new ToolItem(smZoomToolBar, SWT.PUSH);
+        
+        Image generateCodeHeight = new Image(this.getDisplay(),
+                IgstkvtZoomedScrolledSMCanvas.class
+                        .getResourceAsStream("/DecreaseArcHeight.jpg"));
+        generateCodeToolItem.setImage(generateCodeHeight);
+        generateCodeToolItem.setToolTipText("Generate code");
+        generateCodeToolItem.addSelectionListener(new SelectionListener() {
+            public void widgetSelected(SelectionEvent event) {
+            	System.out.println("code generator selected");
+            	System.out.println("id = " + stateMachine.getId());
+            	System.out.println("name = " + stateMachine.getName());
+            	
+            	String scxmlFileName = "igstk" + stateMachine.getName() + ".xml";
+            	CodeGeneration codeGenerator = new CodeGeneration();
+            	
+            	codeGenerator.generate(scxmlFileName);
+            }
+            
+            public void widgetDefaultSelected(SelectionEvent event) {
+            }
+            
+        });
+        
         if(!disableAnimationButton) {
 	        ToolItem animateButton = new ToolItem(smZoomToolBar, SWT.PUSH);
 	        Image animate = new Image(this.getDisplay(),
