@@ -14,7 +14,10 @@
                  ,'ABCDEFGHIJKLMNOPQRSTUVWXYZ')"/>
   		<xsl:value-of select="substring($str,2)"/>
 	</xsl:template>
-	<xsl:template xmlns:util="java:test.Utility" match="/">namespace <xsl:value-of
+	
+	<xsl:template xmlns:util="java:test.Utility" match="/">
+/* This file was generated. */
+namespace <xsl:value-of
              select="$namespace"/> 
 {
              
@@ -31,10 +34,10 @@
           	
           </xsl:for-each>
            
-        <xsl:for-each select="scxml/state">
-	          	igstkAddTransitionMacro( <xsl:value-of select="@id"/>, <xsl:value-of select="transition/@event"/>, <xsl:value-of select="transition/target/@next"/>  ) 
-
-	          </xsl:for-each>
+          <xsl:for-each select="scxml/state">
+          	igstkAddTransitionMacro( <xsl:value-of select="@id"/>, <xsl:call-template name="capitalizeString"><xsl:with-param name="str"  select="transition/@event"/></xsl:call-template>, <xsl:value-of select="transition/target/@next"/>  ) 
+          	
+          </xsl:for-each>
           
           <xsl:for-each select="scxml">
             igstkSetInitialStateMacro( <xsl:value-of select="@initialstate" /> )
