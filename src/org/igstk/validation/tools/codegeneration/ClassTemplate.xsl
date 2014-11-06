@@ -31,10 +31,10 @@
           	
           </xsl:for-each>
            
-          <xsl:for-each select="scxml/state/transition">
-          	igstkAddTransitionMacro( <xsl:value-of select="@event"/> ) 
-          	
-          </xsl:for-each>
+        <xsl:for-each select="scxml/state">
+	          	igstkAddTransitionMacro( <xsl:value-of select="@id"/>, <xsl:value-of select="transition/@event"/>, <xsl:value-of select="transition/target/@next"/>  ) 
+
+	          </xsl:for-each>
           
           <xsl:for-each select="scxml">
             igstkSetInitialStateMacro( <xsl:value-of select="@initialstate" /> )
