@@ -22,23 +22,17 @@
 namespace <xsl:value-of
              select="$namespace"/> 
 {
-	
-		
-	
-			<xsl:for-each select="scxml/state">
-          	<xsl:value-of select="$className" />State::<xsl:value-of select="@id"/>( <xsl:value-of select="$className" />* ) { } 
-          	</xsl:for-each>
+
+		<xsl:for-each select="scxml/state">
+        <xsl:value-of select="$className" />State::<xsl:value-of select="@id"/>( <xsl:value-of select="$className" />* ) { } 
+        </xsl:for-each>
           	
-        	void ChangeState( <xsl:value-of select="$className" />* a, <xsl:value-of select="$className" />State* b ){
-				t->ChangeState(s);
-			}
-	};
+        void ChangeState( <xsl:value-of select="$className" />* a, <xsl:value-of select="$className" />State* b ){
+			t->ChangeState(b);
+		}
         
  
 }// end namespace igstk
-	</xsl:template>
-	
-	
-	
-	
+</xsl:template>
+		
 </xsl:stylesheet>
