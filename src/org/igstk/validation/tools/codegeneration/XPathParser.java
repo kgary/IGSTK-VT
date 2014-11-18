@@ -1,4 +1,4 @@
-package test;
+package org.igstk.validation.tools.codegeneration;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +19,7 @@ public class XPathParser {
 	public XPathParser() {
 	}
 
-	public static List<String> parse(String XMLFilePath, String XPathExpression) {
+	public List<String> parse(String XMLFilePath, String XPathExpression) {
 
 		List<String> attrList = new ArrayList<String>();
 

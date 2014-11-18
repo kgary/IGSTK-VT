@@ -2,6 +2,7 @@ package org.igstk.validation.tools.codegeneration;
 
 import java.io.*;
 import java.util.HashMap;
+import java.util.List;
 
 import org.igstk.validation.tools.codegeneration.XMLTransform;
 import org.igstk.validation.tools.codegeneration.Utility;
@@ -48,7 +49,21 @@ public class CodeGeneration {
 						+ "ContextClassTemplate.xsl");
 		
 		
+		XPathParser parser = new XPathParser();
 		
+		List<String> states = parser.parse(sourceFile.getAbsolutePath(), "/*/state");
+	
+		
+		String state,resultStateFileName;
+		//generate the concrete state header file(s)
+		for(int i = 0; i < states.size(); i++)
+		{
+			state = states.get(i);
+			resultStateFileName = OUTPUT_DIR + state + ".h";
+			
+			generateStateFile(sourceFile, resultStateFileName, TEMPLATE_FILE_PATH 
+					+ "ConcreteStateHeaderTemplate.xsl", state);
+		}
 
 	}
 
@@ -81,5 +96,37 @@ public class CodeGeneration {
 			System.out.println("exception thrown");
 		}
 	}
+	
+	private void generateStateFile(File sourceFile, String resultFileName,
+			String templateFileName, String state) {
+
+		File resultFile, templateFile;
+		HashMap<String, String> params;
+
+		try {
+
+			resultFile = new File(resultFileName);
+			templateFile = new File(templateFileName);
+
+			params = new HashMap<String, String>();
+			System.out.println(sourceFile.getName());
+
+			String className = util.removeWord(sourceFile.getName(), "igstk");
+
+			className = util.removeWord(className, ".xml");
+
+			params.put("className", className);
+			params.put("namespace", "igstk");
+			params.put("stateName", state);
+
+			XMLTransform t = new XMLTransform();
+
+			t.transform(sourceFile, resultFile, templateFile, params);
+
+		} catch (Exception e) {
+			System.out.println("exception thrown");
+		}
+	}
+
 
 }
