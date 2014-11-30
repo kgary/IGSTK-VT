@@ -33,6 +33,7 @@ import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.ToolBar;
 import org.eclipse.swt.widgets.ToolItem;
+import org.igstk.validation.tools.codegeneration.CodeGeneration;
 import org.igstk.validation.tools.smviz.IgstkvtSMVIZStateMachine;
 
 /**
@@ -256,6 +257,37 @@ public class IgstkvtZoomedScrolledSMCanvas extends Composite {
             public void widgetDefaultSelected(SelectionEvent event) {
             }
         });
+        
+        /** Added for code generation **/
+        
+        ToolItem codeGenerationToolItem = new ToolItem(smZoomToolBar, SWT.PUSH);
+        Image generateCodeImg = new Image(this.getDisplay(),
+                IgstkvtZoomedScrolledSMCanvas.class
+                        .getResourceAsStream("/CodeGenPic.png"));
+        codeGenerationToolItem.setImage(generateCodeImg);
+        codeGenerationToolItem.setToolTipText("Generate Code");
+
+        codeGenerationToolItem.addSelectionListener(new SelectionListener() {
+            public void widgetSelected(SelectionEvent event) {
+            	
+            	/** Generate the code for the selected diagram **/
+             	System.out.println("code generator selected");
+             	System.out.println("id = " + stateMachine.getId());
+             	System.out.println("name = " + stateMachine.getName());
+             	    	
+             	String scxmlFileName = "igstk" + stateMachine.getName() + ".xml";
+             	CodeGeneration codeGenerator = new CodeGeneration();
+             	      	
+             	codeGenerator.generate(scxmlFileName);
+            	
+            }
+
+            public void widgetDefaultSelected(SelectionEvent event) {
+            }
+        });
+        
+        /** End Code Generation icon block **/
+        
 
         if(!disableAnimationButton) {
 	        ToolItem animateButton = new ToolItem(smZoomToolBar, SWT.PUSH);
