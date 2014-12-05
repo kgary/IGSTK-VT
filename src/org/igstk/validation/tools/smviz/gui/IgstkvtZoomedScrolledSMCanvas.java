@@ -271,11 +271,12 @@ public class IgstkvtZoomedScrolledSMCanvas extends Composite {
             public void widgetSelected(SelectionEvent event) {
             	
             	/** Generate the code for the selected diagram **/
-             	System.out.println("code generator selected");
-             	System.out.println("id = " + stateMachine.getId());
-             	System.out.println("name = " + stateMachine.getName());
+             	//System.out.println("code generator selected");
+             	//System.out.println("id = " + stateMachine.getId());
+             	//System.out.println("name = " + stateMachine.getName());
              	    	
-             	String scxmlFileName = "igstk" + stateMachine.getName() + ".xml";
+             	String scxmlFileName = stateMachine.getName();
+             	//System.out.println("BEFORE: "+ scxmlFileName);
              	CodeGeneration codeGenerator = new CodeGeneration();
              	      	
              	codeGenerator.generate(scxmlFileName);

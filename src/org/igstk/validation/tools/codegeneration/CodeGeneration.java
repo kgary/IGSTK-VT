@@ -33,9 +33,11 @@ public class CodeGeneration {
 	public void generate(String scxmlFileName) {
 
 		XPathParser parser = XPathParserFactory.getParser();
-
-		File sourceFile = new File(SCXML_DIR + scxmlFileName);
-
+		//System.out.println("scxmlFileName = " + scxmlFileName);
+		File sourceFile = null;
+	
+		sourceFile = new File(scxmlFileName);
+		
 		String resultFileName = OUTPUT_DIR + util.removeWord(sourceFile.getName(), ".xml");
 		
 		
