@@ -9,11 +9,11 @@ import org.igstk.validation.tools.codegeneration.Utility;
 
 public class CodeGeneration {
 
-	private final String SCXML_DIR = "src/test/";
+	private final String SCXML_DIR = "xmlFiles/scxmlFiles/";
 
 	private final String OUTPUT_DIR = "output/";
 
-	private final String TEMPLATE_FILE_PATH = "src/test/";
+	private final String TEMPLATE_FILE_PATH = "src/org/igstk/validation/tools/codegeneration/xsl/";
 	
 	private final String NAMESPACE = "igstk";
 
