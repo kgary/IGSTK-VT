@@ -22,7 +22,10 @@ public class XPathParser {
 	public List<String> parse(String XMLFilePath, String XPathExpression) {
 
 		List<String> attrList = new ArrayList<String>();
+		
 
+		
+		
 		try {
 			DocumentBuilderFactory domFactory = DocumentBuilderFactory
 					.newInstance();
