@@ -20,17 +20,40 @@ public class CodeGeneration {
 	private Utility util;
 	
 	private XMLTransform transformer;
-
-	public CodeGeneration() {
+	
+	private String scxmlFileName;
+	
+	private CodeGeneration() { 
+		
 		transformer = XMLTransformFactory.getTransformer();
 		util		= UtilityFactory.getUtility();
+		
+	}
+
+	public CodeGeneration(String scxmlFileName) {
+		transformer = XMLTransformFactory.getTransformer();
+		util		= UtilityFactory.getUtility();
+		this.scxmlFileName = scxmlFileName;
+		
+		//determine if file name is in proper form
+		if(!util.contains(scxmlFileName, ".xml")){
+			this.scxmlFileName = SCXML_DIR + NAMESPACE + scxmlFileName + ".xml";
+		}
+	}
+
+	public String getScxmlFileName() {
+		return scxmlFileName;
+	}
+
+	public void setScxmlFileName(String scxmlFileName) {
+		this.scxmlFileName = scxmlFileName;
 	}
 
 	/**
 	 * Generates a file based off of an SCXML file
 	 * @param scxmlFileName
 	 */
-	public void generate(String scxmlFileName) {
+	public void generate() {
 
 		XPathParser parser = XPathParserFactory.getParser();
 		//System.out.println("scxmlFileName = " + scxmlFileName);

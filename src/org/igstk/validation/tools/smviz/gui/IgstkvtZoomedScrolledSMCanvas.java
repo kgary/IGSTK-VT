@@ -34,6 +34,7 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.ToolBar;
 import org.eclipse.swt.widgets.ToolItem;
 import org.igstk.validation.tools.codegeneration.CodeGeneration;
+import org.igstk.validation.tools.codegeneration.CodeGenerationFactory;
 import org.igstk.validation.tools.smviz.IgstkvtSMVIZStateMachine;
 
 /**
@@ -271,15 +272,15 @@ public class IgstkvtZoomedScrolledSMCanvas extends Composite {
             public void widgetSelected(SelectionEvent event) {
             	
             	/** Generate the code for the selected diagram **/
-             	//System.out.println("code generator selected");
-             	//System.out.println("id = " + stateMachine.getId());
+        
              	//System.out.println("name = " + stateMachine.getName());
              	    	
              	String scxmlFileName = stateMachine.getName();
-             	//System.out.println("BEFORE: "+ scxmlFileName);
-             	CodeGeneration codeGenerator = new CodeGeneration();
+            
+             	CodeGeneration codeGenerator = CodeGenerationFactory
+             									.getGenerator(scxmlFileName);
              	      	
-             	codeGenerator.generate(scxmlFileName);
+             	codeGenerator.generate();
             	
             }
 

@@ -52,4 +52,8 @@ public class Utility {
 		return tmp;
 	}
 
+	
+	public boolean contains(String str, String word){
+		return str.contains(word);
+	}
 }
